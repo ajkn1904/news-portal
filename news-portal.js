@@ -104,7 +104,7 @@ const loadNewsData = (data) => {
             </div>
           </div>
           <small><i class="fa-regular fa-eye">  ${element?.total_view ? element.total_view : ''} M</i></small>
-          <button onclick='showDetailNews(${JSON.stringify(element._id)})' class="btn btn-outline-secondary fw-semibold" data-bs-toggle="modal" data-bs-target="#newsDetailModal">READ</button>
+          <button onclick='showDetailNews(${JSON.stringify(element._id)})' class="btn btn-outline-secondary rounded-5 fw-semibold" data-bs-toggle="modal" data-bs-target="#newsDetailModal">READ</button>
         </div>
 
         `
