@@ -12,7 +12,7 @@ const loadCategory = async() =>{
 
 
 const showCategory = (data) =>{
-    console.log(data);
+    //console.log(data);
     const categorylist = document.getElementById('category-list');
     
     data.forEach(element => {        
@@ -80,11 +80,15 @@ const loadNewsData = (data) => {
                 </div>
             </div>
         </div>
-        <div class="card-footer d-flex justify-content-between align-items-center">
-          <div>
-              <small class="text-muted">Last updated 3 mins ago</small>
+        <div class="card-footer d-flex justify-content-between align-items-center pt-4">
+          <div class="d-flex flex-col gap-3">
+            <img src="${element.author.img}" style="height:50px; width:50px;" class="rounded-5">
+            <div>
+                <h5>${element.author?.name ? element.author.name : "Author name not found"}</h5>
+                <small class="text-muted">${element.author?.published_date ? element.author.published_date : "No Date Found"}</small>
+            </div>
           </div>
-          <i class="fa-regular fa-eye"></i>
+          <small><i class="fa-regular fa-eye">  ${element?.total_view ? element.total_view : ""} M</i></small>
           <button class="btn btn-outline-secondary fw-semibold">READ</button>
         </div>
 
