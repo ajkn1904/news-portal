@@ -19,7 +19,7 @@ const showCategory = (data) => {
         let list = document.createElement('li');
         list.classList.add('d-inline-block');
         list.style.listStyle = 'none';
-        list.style.padding = '5px';
+        list.style.padding = '10px';
 
         list.innerHTML = `
         <li onclick="loadNews('${element.category_id}')">${element.category_name}</li>
@@ -85,7 +85,7 @@ const loadNewsData = (data) => {
 
         newsCardDiv.innerHTML = `
         <div class="row g-0">
-            <div class="col-md-4">
+            <div class="col-md-4 col-12">
                 <img src="${element.image_url}" class="img-fluid rounded-start">
             </div>
             <div class="col-md-8">
