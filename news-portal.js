@@ -60,6 +60,7 @@ const loadNews = async (data) => {
     }
 }
 
+
 const loadNewsData = (data) => {
     console.log(data.data);
     console.log(data.data.length);
@@ -139,7 +140,7 @@ const loadModalData = (data) =>{
                 <small class="text-muted">${data.data[0].author?.published_date ? data.data[0].author.published_date : "No date found"}</small>
             </div>
         </div>
-        <small class="text-muted">View: ${data.data[0]?.total_view ? data.data[0].total_view : 'No data found'} M</i></small>
+        <small class="text-muted">View: ${data.data[0]?.total_view ? data.data[0].total_view+' M' : 'No data found'}</i></small>
     </div> 
     </div> 
     `
@@ -157,3 +158,4 @@ const loadModalData = (data) =>{
 }
 
 loadCategory();
+loadNews('01');
