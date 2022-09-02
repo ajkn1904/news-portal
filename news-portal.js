@@ -12,7 +12,7 @@ const loadCategory = async () => {
 
 
 const showCategory = (data) => {
-    //console.log(data);
+
     const categorylist = document.getElementById('category-list');
 
     data.forEach(element => {
@@ -39,8 +39,12 @@ const showCategory = (data) => {
 }
 
 
+const showloader = document.getElementById('loader');
+const showNotFoundMsg = document.getElementById('not-found-msg');
+
 
 const loadNews = async (data) => {
+    showloader.classList.remove('d-none');
 
     const newsCount = document.getElementById('news-count');
 
@@ -49,7 +53,7 @@ const loadNews = async (data) => {
         const res = await fetch(url)
         const data = await res.json();
         loadNewsData(data);
-        newsCount.innerText = `${data.data.length} items found.`;
+        newsCount.innerText = `${data.data.length} News Found.`;
     }
     catch (e) {
         console.log(e);
@@ -57,7 +61,16 @@ const loadNews = async (data) => {
 }
 
 const loadNewsData = (data) => {
-    console.log(data.data)
+    console.log(data.data);
+    console.log(data.data.length);
+
+    if(data.data.length === 0){
+        showNotFoundMsg.classList.remove('d-none');
+        showloader.classList.add('d-none');
+    }
+    else{
+        showNotFoundMsg.classList.add('d-none');
+    }
 
     const newsCard = document.getElementById("news-card");
     newsCard.innerHTML = '';
@@ -95,6 +108,7 @@ const loadNewsData = (data) => {
 
         `
         newsCard.appendChild(newsCardDiv);
+        showloader.classList.add('d-none');
     });
 }
 
@@ -137,7 +151,7 @@ const loadModalData = (data) =>{
  
     const modalFooter = document.getElementById('modal-footer');
     modalFooter.innerHTML = `
-    <h6 class="text-muted">Peoples' Opinion: ${data.data[0].rating.badge}</h6>
+    <h6 class="text-muted">Readers' Opinion: ${data.data[0].rating.badge}</h6>
     <p class="text-muted">Rating: ${data.data[0].rating.number}</p>  
     `
 }
