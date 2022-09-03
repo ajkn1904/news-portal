@@ -109,7 +109,7 @@ const loadNewsData = (data) => {
 
         <div class="d-flex justify-content-between align-items-center gap-5">
 
-            <div class="d-flex flex-col gap-3 pe-lg-5 pe-md-5 me-lg-5 me-md-5">
+            <div class="d-flex align-items-center flex-col gap-3 pe-lg-5 pe-md-5 me-lg-5 me-md-5">
                 <img src="${element.author.img}" style="height:30px; width:30px;" class="rounded-5">
                 <div>
                     <h6 style="color:#7c177c;">${element.author?.name ? element.author.name : "Author name not found"}</h6>
@@ -165,7 +165,7 @@ const loadModalData = (data) =>{
     modalTitle.innerHTML = `
     <h5>HEADING: <span style="color:#7c177c;">${data.data[0].title};</span></h5>
     <div class="d-flex justify-content-between align-items-center pt-4">
-        <div class="d-flex flex-col gap-3">
+        <div class="d-flex align-items-center flex-col gap-3">
             <img src="${data.data[0].author.img}" style="height:30px; width:30px;" class="rounded-5">
             <div>
                 <h6 class="text-muted">${data.data[0].author?.name ? data.data[0].author.name : "Author name not found"}</h6>
