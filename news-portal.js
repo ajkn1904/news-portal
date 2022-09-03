@@ -128,7 +128,6 @@ const showDetailNews = async (data) => {
 
 
 const loadModalData = (data) =>{
-    console.log(data)
     const modalTitle = document.getElementById('newsDetailModalLabel');
     modalTitle.innerHTML = `
     <h5>${data.data[0].title};</h5>
