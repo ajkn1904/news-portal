@@ -90,7 +90,7 @@ const loadNewsData = (data) => {
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title">${element.title}</h5>
+                    <h3 class="card-title">${element.title}</h3>
                     <p class="card-text d-block text-truncate">${element.details}</p>
                 </div>
             </div>
