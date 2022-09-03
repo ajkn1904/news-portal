@@ -19,15 +19,16 @@ const showCategory = (data) => {
         let list = document.createElement('li');
         list.classList.add('d-inline-block');
         list.style.listStyle = 'none';
-        list.style.padding = '10px';
+        list.style.padding = '15px';
 
         list.innerHTML = `
-        <li><a onclick="loadNews('${element.category_id}')">${element.category_name}</a></li>
+        <li class="border border-1 border-secondary border-end-0 border-start-0 border-top-0"><a onclick="loadNews('${element.category_id}')">${element.category_name}</a></li>
         
         <style>
             li:hover{
                 color: white;
                 background-color: #937293;
+                border-radius:10px;
             }
             </style>
             `
@@ -50,7 +51,7 @@ const showCategory = (data) => {
         const res = await fetch(url)
         const data = await res.json();
         loadNewsData(data);
-        newsCount.innerText = `${data.data.length} News Found.`;
+        newsCount.innerText = `${data.data.length} Items Found.`;
     }
     catch (e) {
         console.log(e);
@@ -81,13 +82,13 @@ const loadNewsData = (data) => {
         const newsCardDiv = document.createElement('div');
 
         newsCardDiv.classList.add('card');
-        newsCardDiv.classList.add('mb-3');
+        newsCardDiv.classList.add('mb-4');
         // newsCardDiv.style.maxWidth = ('460px');
 
         newsCardDiv.innerHTML = `
        
         <style>
-        .fa-solid{
+        .fa-solid, .fa-eye{
             color: #7c177c;
         }
         </style>
@@ -104,23 +105,35 @@ const loadNewsData = (data) => {
                 </div>
             </div>
         </div>
-        <div class="card-footer d-flex justify-content-between align-items-center pt-4">
-          <div class="d-flex flex-col gap-3">
-            <img src="${element.author.img}" style="height:50px; width:50px;" class="rounded-5">
-            <div>
-                <h5>${element.author?.name ? element.author.name : "Author name not found"}</h5>
-                <small class="text-muted">${element.author?.published_date ? element.author.published_date : "No Date Found"}</small>
+        <div class="card-footer d-flex justify-content-between align-items-center pt-4 flex-lg-row flex-md-row flex-sm-column flex-column gap-3">
+
+        <div class="d-flex justify-content-between align-items-center gap-5">
+
+            <div class="d-flex flex-col gap-3 pe-lg-5 pe-md-5 me-lg-5 me-md-5">
+                <img src="${element.author.img}" style="height:50px; width:50px;" class="rounded-5">
+                <div>
+                    <h5>${element.author?.name ? element.author.name : "Author name not found"}</h5>
+                    <small class="text-muted">${element.author?.published_date ? element.author.published_date : "No Date Found"}</small>
+                </div>
             </div>
-          </div>
-          <small><i class="fa-regular fa-eye">  ${element?.total_view ? element.total_view : ''} M</i></small>
-          <span clas="d-flex flex-row">
+         
+
+          <div class="d-flex flex-lg-row flex-md-column flex-sm-column flex-column gap-lg-5 gap-md-2 gap-sm-2 gap-2">
+            
+            <small class="pe-lg-5 pe-md-5 me-lg-5 me-md-5"><i class="fa-regular fa-eye">  <span style="color:black;">${element?.total_view ? element.total_view : ''} M</span></i></small>
+          
+            <span clas="d-flex flex-row ps-lg-5 ps-md-5 ms-lg-5 ms-md-5">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star-half-stroke"></i>
             </span>
-          <button onclick='showDetailNews(${JSON.stringify(element._id)})' class="btn btn-outline-secondary rounded-5 fw-semibold" data-bs-toggle="modal" data-bs-target="#newsDetailModal">READ</button>
+            </div>
+            </div>
+
+          
+            <button onclick='showDetailNews(${JSON.stringify(element._id)})' class="btn btn-outline-secondary rounded-5 fw-semibold" data-bs-toggle="modal" data-bs-target="#newsDetailModal">READ</button>
         </div>
 
         `

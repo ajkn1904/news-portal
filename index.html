@@ -29,10 +29,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-5">
                     <li class="nav-item rounded">
-                        <a class="nav-link active" aria-current="page" href="#" style="color:#7c177c;">Home</a>
+                        <a class="nav-link active fw-semibold" aria-current="page" href="#" style="color:#7c177c;">Home</a>
                     </li>
                     <li class="nav-item rounded">
-                        <a class="nav-link" href="blog.html">Blog</a>
+                        <a class="nav-link fw-semibold" href="blog.html">Blog</a>
                     </li>        
                     </ul>
                     
@@ -48,19 +48,12 @@
 
     <section class="container">
 
-        <div class="my-3 p-3 fs-6 fw-semibold" style="background-color: #e1d9e1;">
-            <ul id="category-list" class="d-flex justify-content-around flex-wrap flex-sm-wrap">
+        <div class="my-3 p-3 fs-6 fw-semibold" style="background-color: #ece1ec;">
+            <ul id="category-list" class="d-flex justify-content-between flex-wrap flex-sm-wrap">
             
             </ul>
         </div>
 
-        
-        <div class="text-center">
-            <div id="loader" class="spinner-border d-none" role="status" style="color:#7c177c;">
-                <span class="visually-hidden"></span>
-            </div>
-
-        </div>
         
         <div id="news-count" class="container bg-white border border-gray rounded d-flex align-items-center" style="height:60px;">      
         </div>
@@ -76,18 +69,25 @@
         
             </div>
         
-            <div>
+            <div class="d-flex flex-lg-row flex-md-row flex-sm-row flex-column gap-2">
                 <button class="btn" active style="background-color:#7c177c; color:white;">Today’s Pick</button>
                 <button class="btn btn-outline-secondary">Trending</button>
             </div>
         </div>
-        
-
-  
-        
+       
         
     </section>
+
+
    
+    <section class="text-center">
+        <div id="loader" class="spinner-border d-none" role="status" style="color:#7c177c;">
+            <span class="visually-hidden"></span>
+        </div>
+
+    </section>
+
+    
    
     <section class="container text-center my-5">  
         <div id="not-found-msg" class="d-none">
