@@ -14,7 +14,7 @@ const loadCategory = async () => {
 const showCategory = (data) => {
 
     const categorylist = document.getElementById('category-list');
-
+    
     data.forEach(element => {
         let list = document.createElement('li');
         list.classList.add('d-inline-block');
@@ -32,22 +32,22 @@ const showCategory = (data) => {
                 background-color: #937293;
                 color: white;
             }
-        </style>
-        `
-        categorylist.appendChild(list);
-    });
-}
-
-
-const showloader = document.getElementById('loader');
-const showNotFoundMsg = document.getElementById('not-found-msg');
-
-
-const loadNews = async (data) => {
-    showloader.classList.remove('d-none');
-
-    const newsCount = document.getElementById('news-count');
-
+            </style>
+            `
+            categorylist.appendChild(list);
+        });
+    }
+    
+  
+    const showloader = document.getElementById('loader');
+    const showNotFoundMsg = document.getElementById('not-found-msg');
+    
+    
+    const loadNews = async (data) => {
+        showloader.classList.remove('d-none');
+        
+        const newsCount = document.getElementById('news-count');
+        
     const url = `https://openapi.programming-hero.com/api/news/category/${data}`;
     try {
         const res = await fetch(url)
@@ -62,8 +62,11 @@ const loadNews = async (data) => {
 
 
 const loadNewsData = (data) => {
-    console.log(data.data);
-    console.log(data.data.length);
+    
+    data.data.sort((a,b) =>{
+        return b.total_view - a.total_view;
+        });
+
 
     if(data.data.length === 0){
         showNotFoundMsg.classList.remove('d-none');
