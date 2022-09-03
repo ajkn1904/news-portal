@@ -22,10 +22,10 @@ const showCategory = (data) => {
         list.style.padding = '10px';
 
         list.innerHTML = `
-        <li onclick="loadNews('${element.category_id}')">${element.category_name}</li>
+        <li><a onclick="loadNews('${element.category_id}')">${element.category_name}</a></li>
         
         <style>
-            li:hover, li:focus, li:active {
+            li:hover{
                 color: white;
                 background-color: #937293;
             }
@@ -82,8 +82,17 @@ const loadNewsData = (data) => {
 
         newsCardDiv.classList.add('card');
         newsCardDiv.classList.add('mb-3');
+        // newsCardDiv.style.maxWidth = ('460px');
 
         newsCardDiv.innerHTML = `
+       
+        <style>
+        .fa-solid{
+            color: #7c177c;
+        }
+        </style>
+
+
         <div class="row g-0">
             <div class="col-md-4 col-12">
                 <img src="${element.image_url}" class="img-fluid rounded-start">
@@ -91,7 +100,7 @@ const loadNewsData = (data) => {
             <div class="col-md-8">
                 <div class="card-body">
                     <h3 class="card-title">${element.title}</h3>
-                    <p class="card-text d-block text-truncate">${element.details}</p>
+                    <p class="card-text d-block">${element.details.slice(0,200)+'...'}</p>
                 </div>
             </div>
         </div>
@@ -104,6 +113,13 @@ const loadNewsData = (data) => {
             </div>
           </div>
           <small><i class="fa-regular fa-eye">  ${element?.total_view ? element.total_view : ''} M</i></small>
+          <span clas="d-flex flex-row">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+            </span>
           <button onclick='showDetailNews(${JSON.stringify(element._id)})' class="btn btn-outline-secondary rounded-5 fw-semibold" data-bs-toggle="modal" data-bs-target="#newsDetailModal">READ</button>
         </div>
 
@@ -146,7 +162,7 @@ const loadModalData = (data) =>{
 
     const modalBody = document.getElementById('modal-body');
     modalBody.innerHTML = `
-    <img src="${data.data[0].image_url}" class="img-fluid">
+    <img src="${data.data[0].image_url}" class="img-fluid mb-4">
     <p>${data.data[0].details}</p>  
     `
  

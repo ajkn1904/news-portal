@@ -16,7 +16,7 @@
         h1{
             color:#603c60;
         }
-        li:hover, li:focus, li:active {
+        ul li:hover, li:focus, li:active {
             background-color: #937293;
             color: white;
         }
@@ -28,9 +28,9 @@
         
         <nav class="navbar navbar-expand-lg bg-light px-1">
             <div class="container-fluid d-flex justify-contenet-between">
-                <div>
-                    <a class="navbar-brand fs-3 fw-bold" href="#" style="color:#7c177c;">NEWS UPDATE</a>
-                </div>
+              <div>
+                <a class="navbar-brand fs-3 fw-bold" href="#"> <span style="color:#7c177c;">NEWS</span> UPDATE</a>
+            </div>
 
                 <div>  
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,10 +38,10 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-5">
-                    <li class="nav-item">
+                    <li class="nav-item rounded">
                         <a class="nav-link" aria-current="page" href="index.html">Home</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item rounded">
                         <a class="nav-link active" href="#" style="color:#7c177c;">Blog</a>
                     </li>        
                     </ul>
@@ -71,7 +71,7 @@
               </h2>
               <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                  <strong>The scope of a var variable is functional scope. The scope of a let variable is block scope. The scope of a const variable is block scope</strong>Moreover, the main differences between var, let and const are:
+                  <strong>The scope of a var variable is functional scope, the scope of a let variable is block scope and the scope of a const variable is block scope. </strong>Moreover, the main differences between var, let and const are:
                   1. var variables can be reassigned while let and const variables can not.
                   2. var variables are declared using the var keyword while let and const variables are declared using the let and const keywords respectively.
                   3. const variables are immutable while let and var variables are not.
@@ -83,7 +83,7 @@
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingTwo">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    What is the difference between arrow function and regular function?
+                    What are the differences between arrow function and regular function?
                 </button>
               </h2>
               <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
@@ -100,13 +100,13 @@
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingThree">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        What is the difference among map(), forEach(), filter() & find()?
+                        What is the difference between map() & forEach(), filter() & find()?
                     </button>
                 </h2>
                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        The first difference between map() and forEach() is the returning value.<strong>The forEach() method returns undefined and map() returns a new array with the transformed elements.</strong>Even if they do the same job, the returning value remains different.
-                        The only difference is <strong>the filter() method search through all the elements while find() method search through all the child elements only. </strong>
+                        The first difference between map() and forEach() is the returning value.<strong> The forEach() method returns undefined and map() returns a new array with the transformed elements.</strong> Even if they do the same job, the returning value remains different.
+                        Again, the only difference is <strong>the filter() method search through all the elements while find() method search through all the child elements only. </strong>
                     </div>
                 </div>
             </div>
