@@ -110,27 +110,31 @@ const loadNewsData = (data) => {
         <div class="d-flex justify-content-between align-items-center gap-5">
 
             <div class="d-flex flex-col gap-3 pe-lg-5 pe-md-5 me-lg-5 me-md-5">
-                <img src="${element.author.img}" style="height:50px; width:50px;" class="rounded-5">
+                <img src="${element.author.img}" style="height:30px; width:30px;" class="rounded-5">
                 <div>
-                    <h5>${element.author?.name ? element.author.name : "Author name not found"}</h5>
+                    <h6 style="color:#7c177c;">${element.author?.name ? element.author.name : "Author name not found"}</h6>
                     <small class="text-muted">${element.author?.published_date ? element.author.published_date : "No Date Found"}</small>
                 </div>
             </div>
          
 
-          <div class="d-flex flex-lg-row flex-md-column flex-sm-column flex-column gap-lg-5 gap-md-2 gap-sm-2 gap-2">
+            <div class="d-flex flex-lg-row flex-md-column flex-sm-column flex-column gap-lg-5 gap-md-2 gap-sm-2 gap-2">
             
-            <small class="pe-lg-5 pe-md-5 me-lg-5 me-md-5"><i class="fa-regular fa-eye">  <span style="color:black;">${element?.total_view ? element.total_view+' M' : ' Not found'}</span></i></small>
+                <small class="pe-lg-5 pe-md-5 me-lg-5 me-md-5">
+                    <i class="fa-regular fa-eye">  <span style="color:black;">${element?.total_view ? element.total_view+' M' : ' Not found'}</span></i>
+                </small>
           
-            <span clas="d-flex flex-row ps-lg-5 ps-md-5 ms-lg-5 ms-md-5">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star-half-stroke"></i>
-            </span>
+                <span clas="d-flex flex-row ps-lg-5 ps-md-5 ms-lg-5 ms-md-5">
+                    <small>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        </small>
+                    </span>
             </div>
-            </div>
+        </div>
 
           
             <button onclick='showDetailNews(${JSON.stringify(element._id)})' class="btn btn-outline-secondary rounded-5 fw-semibold" data-bs-toggle="modal" data-bs-target="#newsDetailModal">READ</button>
@@ -159,12 +163,12 @@ const showDetailNews = async (data) => {
 const loadModalData = (data) =>{
     const modalTitle = document.getElementById('newsDetailModalLabel');
     modalTitle.innerHTML = `
-    <h5>${data.data[0].title};</h5>
+    <h5>HEADING: <span style="color:#7c177c;">${data.data[0].title};</span></h5>
     <div class="d-flex justify-content-between align-items-center pt-4">
         <div class="d-flex flex-col gap-3">
             <img src="${data.data[0].author.img}" style="height:30px; width:30px;" class="rounded-5">
             <div>
-                <h6>${data.data[0].author?.name ? data.data[0].author.name : "Author name not found"}</h6>
+                <h6 class="text-muted">${data.data[0].author?.name ? data.data[0].author.name : "Author name not found"}</h6>
                 <small class="text-muted">${data.data[0].author?.published_date ? data.data[0].author.published_date : "No date found"}</small>
             </div>
         </div>
