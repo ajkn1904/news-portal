@@ -25,12 +25,9 @@ const showCategory = (data) => {
         <li onclick="loadNews('${element.category_id}')">${element.category_name}</li>
         
         <style>
-            li:visited{
-                color:gray;
-            }
             li:hover, li:focus, li:active {
-                background-color: #937293;
                 color: white;
+                background-color: #937293;
             }
             </style>
             `
@@ -150,6 +147,7 @@ const loadModalData = (data) =>{
 
     const modalBody = document.getElementById('modal-body');
     modalBody.innerHTML = `
+    <img src="${data.data[0].image_url}" class="img-fluid">
     <p>${data.data[0].details}</p>  
     `
  
