@@ -120,7 +120,7 @@ const loadNewsData = (data) => {
 
           <div class="d-flex flex-lg-row flex-md-column flex-sm-column flex-column gap-lg-5 gap-md-2 gap-sm-2 gap-2">
             
-            <small class="pe-lg-5 pe-md-5 me-lg-5 me-md-5"><i class="fa-regular fa-eye">  <span style="color:black;">${element?.total_view ? element.total_view : ''} M</span></i></small>
+            <small class="pe-lg-5 pe-md-5 me-lg-5 me-md-5"><i class="fa-regular fa-eye">  <span style="color:black;">${element?.total_view ? element.total_view+' M' : ' Not found'}</span></i></small>
           
             <span clas="d-flex flex-row ps-lg-5 ps-md-5 ms-lg-5 ms-md-5">
                 <i class="fa-solid fa-star"></i>
